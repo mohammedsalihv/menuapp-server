@@ -8,7 +8,15 @@ const app = express();
 
 app.use(express.json()); 
 app.use(cookieParser());  
-app.use(cors());  
+
+const allowedOrigins = ['https://menuapp-client.vercel.app/']; 
+
+app.use(
+  cors({
+    origin: allowedOrigins, 
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  })
+);
 
 app.use('/api/menu-manager/menu', menuRoutes); 
 app.use('/api/menu-manager/item', itemRoutes);  
