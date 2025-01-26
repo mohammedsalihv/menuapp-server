@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json()); 
 app.use(cookieParser());  
 
-const allowedOrigins = ['https://menuapp-client.vercel.app/']; 
+const allowedOrigins = ['https://menuapp-client.vercel.app']; 
 
 app.use(
   cors({
